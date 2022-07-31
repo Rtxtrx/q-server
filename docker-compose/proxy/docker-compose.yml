@@ -14,7 +14,8 @@ services:
       - "80:80"
       - "443:443"
     networks:
-      - nw
+      - proxy_nw
+     # - nw
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - /etc/ssl/docker:/etc/nginx/certs
@@ -36,11 +37,13 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /etc/ssl/docker:/etc/nginx/certs:rw
     networks:
-      - nw
+      - proxy_nw
+     # - nw
     volumes_from:
       - proxy
 
 
 networks:
-  nw:
+   proxy_nw: 
+ # nw:
     driver: bridge
