@@ -7,8 +7,8 @@ services:
     container_name: q-server
     restart: unless-stopped
     environment:
-      - VIRTUAL_HOST=q-server
-      - VIRTUAL_PORT=4000
+      - Q_HOST
+      - Q_PORT
       - Q_DATA_MUT
       - Q_DATA_HOT
       - Q_REQUESTS_MODE
