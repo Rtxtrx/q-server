@@ -16,10 +16,11 @@ services:
       - Q_REQUESTS_TOPIC
       - Q_QUERY_MAX_RUNTIME
       - Q_SLOW_QUERIES
-    networks:
-      - proxy_nw
-    expose:
-      - "4000"
+    network_mode: host
+#    networks:
+#      - proxy_nw
+#    expose:
+#      - "4000"
     mem_limit: 5G
 networks:
   proxy_nw:

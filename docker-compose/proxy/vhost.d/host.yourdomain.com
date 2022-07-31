@@ -11,7 +11,7 @@ location ^~ /.well-known/acme-challenge/ {
 
 location /graphql {
       proxy_http_version 1.1;
-      proxy_pass http://q-server/graphql;
+      proxy_pass http://5.189.159.114:4000/graphql;
       proxy_set_header Upgrade $http_upgrade;
       proxy_set_header Connection "upgrade";
       proxy_set_header Host $host;
